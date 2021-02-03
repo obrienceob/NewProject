@@ -4,9 +4,7 @@ $(document).ready(function(){
         addInfo()
         function addMaps(){
             var mapLocation = $("#maps")
-            var maps = $("<div>")
-                .attr("id", "map")
-                .addClass("column")
+            var maps = $("<div id='map' class='column'>")
                 .css({
                     "height":"500px",
                     "margin":"30px",
@@ -18,9 +16,7 @@ $(document).ready(function(){
         }
         function addInfo(){
             var locationInfo = $("#locationInfo")
-            var topSites = $("<div>")
-                .attr("id","sites")
-                .addClass("column is-7")
+            var topSites = $("<div id='sites' class='column is-7'>")
                 .css({
                     "height":"500px",
                     "margin":"30px",
@@ -28,9 +24,7 @@ $(document).ready(function(){
                     "padding":"5px",
                     "border":"5px solid red"
                     })
-            var weatherDashboard = $("<div>")
-                .attr("id","weather")
-                .addClass("column is-4")
+            var weatherDashboard = $("<div id='weather' class='column is-4'>")
                 .css({
                     "height":"500px",
                     "margin":"30px",
@@ -41,6 +35,7 @@ $(document).ready(function(){
             locationInfo.append(topSites)
             locationInfo.append(weatherDashboard)
         }
+
         
     })
 });

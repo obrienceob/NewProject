@@ -73,27 +73,27 @@
    background-color: rgb(27, 103, 146);
    color: white;
    text-align: center;
+   position: fixed;
 }
+
+
 body > div > footer > div > ul > li > a,
 body > div > footer > div > ul > li > ul > li > a {
     color: white;
     display: block;
     margin: 0;
-    padding: 0;
+    padding: 5px 0 0 0;
 }
 
 ul {
     list-style: none;
     margin: 0;
     padding-left: 0;
-    color: white;
 }
 
 li {
-    display: block;
     position: relative;
     transition-duration: 0.5s;
-    color:white;
 }
 
 ul li ul {
@@ -102,7 +102,6 @@ ul li ul {
     position: absolute;
     transition: all 0.5s ease;
     display: none;
-    color:white;
 }
 
 ul li:hover > ul,
@@ -112,11 +111,11 @@ ul li ul:focus {
    visibility: visible;
    opacity: 1;
    display: block;
-   color:white;
+
 }
 
 ul li ul li {
     clear: both;
     width: 100%;
-    color: white;
   }
+
