@@ -21,7 +21,7 @@ I want to be able to see the 5 day forecast for the city I am visiting next to t
 
 # Wireframe
 
-link to sketch Hanh created
+link to wireframe Hanh created
 
 # APIs to be used
 Google Maps
@@ -32,4 +32,11 @@ Open Weather API
 Link to Presentation file https://docs.google.com/presentation/d/1bIjCnd0vBGhBoixsHXDmIbmuf2WR24Uum3jaKVZ8Irg/edit?usp=sharing
 
 
-Javaaascriiiptttttt 
+Project development todo list(general):
+- [ ] Set up the file structure (Index, Assets, etc.)
+- [ ] Create HTML boilerplate (Hanh + Danielle)
+- [ ] Add basic CSS formatting (Hanh + Danielle)
+- [ ] Write down pseudocode for script.js file (Amal + Conor)
+- [ ] Link Google Maps API (Amal + Conor)
+- [ ] Link Open Weather API (Amal + Conor)
+- [ ] Link Google Places API (Amal + Conor)
