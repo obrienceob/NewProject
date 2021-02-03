@@ -91,6 +91,7 @@ li {
 ul li ul {
     visibility: hidden;
     opacity: 0;
+    position: absolute;
     transition: all 0.5s ease;
     display: none;
 }
