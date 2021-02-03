@@ -6,12 +6,35 @@
 
 .header {
     position: relative;
-    background-image: url(../images/header-image.jpg);
     width: 100%;
     height: 750px;
     overflow: hidden;
     background-size: cover;
     background-position: center; 
+
+    animation-name: animate;
+    animation-direction: alternate;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes animate{
+    0%{
+        background-image: url(../images/header-image.jpg);
+    }20%{
+        background-image: url(../images/header-image-2.jpg);
+    }40%{
+        background-image: url(../images/header-image-3.jpg);
+    }60%{
+        background-image: url(../images/header-image-4.jpg);
+    }80%{
+        background-image: url(../images/header-image-5.jpg);
+    }100%{
+        background-image: url(../images/header-image-6.jpg);
+    }
 }
 
 .logo {
