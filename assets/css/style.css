@@ -74,7 +74,7 @@
    width: 100%;
    background-color: hsl(204, 86%, 53%);
    color: white;
-   position: relative;
+   position: fixed;
    text-align: center;
 }
 
