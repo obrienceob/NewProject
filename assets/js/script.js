@@ -1,9 +1,7 @@
 $(document).ready(function(){
     var weatherAPI = "424b27cb93fafd7914e312602e3d2a39";
     $("#weather").empty();
-    var long = '';
-    var lat= '';
-
+  
     $("#search-btn").on('click', function(){
         var searchCity = $("#search-places").val();
         $("#weather").empty();
