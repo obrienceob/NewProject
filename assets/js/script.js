@@ -123,6 +123,13 @@ $(document).ready(function(){
                 cardT.append(newImg);
                 column.append(cardT, pt);
 
+                //adding in the longitude and latitude variables for the google maps call
+                var longitude = data.city.coord.lon;
+                var latitude = data.city.coord.lat;
+                initMap(latitude, longitude);
+                console.log(longitude);
+                console.log(latitude);
+
             //appends to html row
             $("#weather").append(column);
             
@@ -137,6 +144,17 @@ $(document).ready(function(){
        })
 
     }
-        
+    
+    function initMap(latitude, longitude) {
+    
+    
+        // var latMap = 47.6062;
+        // var longMap = -122.3321;
+        const myLatLng = { lat: latitude, lng: longitude };
+        const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 8,
+        center: myLatLng,
+        });
+    };    
 
 });
