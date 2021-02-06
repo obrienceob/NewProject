@@ -5,32 +5,20 @@ $(document).ready(function(){
     $("#search-btn").on('click', function(){
         var searchCity = $("#search-places").val();
         $("#weather").empty();
+        $("#sites").empty();
+        $("#map").empty();
 
         //clears the users window afterwards
          if($("#search-places").val()) {
             $("#search-places").val("");
         }
         
-        addMaps()
-        addInfo()
-        function addMaps(){
-            var mapLocation = $("#maps")
-            var maps = $("<div id='map' class='column'>");
-            mapLocation.append(maps)
-        }
-        function addInfo(){
-            
-            var locationInfo = $("#locationInfo")
-            var topSites = $("<div id='sites' class='column is-7'>");
-            var weatherDashboard = $("<div id='weather' class='column is-4'>");
 
+        addInfo()
+        
+        function addInfo(){
             getWeather(searchCity);
             getForecast(searchCity);
-            
-
-        
-            locationInfo.append(topSites)
-            locationInfo.append(weatherDashboard)
         }
 
          
@@ -45,7 +33,19 @@ $(document).ready(function(){
             dataType: "json",
             success: function(data) {
                 //empties weather area
+              
                 $("#weather").empty();
+
+                var mapLocation = $("#maps")
+                var maps = $("<div id='map' class='column'>");
+                mapLocation.append(maps);
+
+                var locationInfo = $("#locationInfo")
+                var topSites = $("<div id='sites' class='column is-7'>");
+                var weatherDashboard = $("<div id='weather' class='column is-4'>");
+
+                locationInfo.append(topSites);
+                locationInfo.append(weatherDashboard);
 
                 var title = data.name;
              
@@ -60,9 +60,29 @@ $(document).ready(function(){
                 weatherTitle.append(image);
                 card.append(weatherTitle, temperature);
                 weatherCard.append(card);
-                $("#weather").append(weatherCard);
+                weatherDashboard.append(weatherCard);
 
+            },
+
+            error: function(textStatus, errorThrown) {
+                console.log(textStatus);
+                console.log(errorThrown);
+                var popUpOL = $('<div class="popup-overlay">');
+                var popup = $('<div class="popup-content">');
+                var popUInfo = $('<h2 class="errtxt">').text("Error");
+                var popP = $('<p class="errp">').text("The City searched was not found, Try Again.");
+                var closepbtn = $('<button class="close">').text("close");
+
+        
+                $(".error").append(popUpOL.append(popup.append(popUInfo, popP, closepbtn)));
+
+                $(".popup-overlay, .popup-content").addClass("active");
+                
+                $(".close, .popup-overlay").on("click", function() {
+                    $(".popup-overlay, .popup-content").removeClass("active");
+                  });
             }
+
         }
     )}
 
@@ -122,11 +142,11 @@ $(document).ready(function(){
 
         }
     )};
-
+    let map;
     function initMap(latitude, longitude) {
         const myLatLng = { lat: latitude, lng: longitude };
         const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 8,
+        zoom: 10,
         center: myLatLng,
         });
     }  

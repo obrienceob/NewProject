@@ -139,8 +139,9 @@ ul li ul li {
     height: 500px;
     margin: 30px 30px 30px 30px;
     padding: 5px;
-    background-image: url('file:///Users/danio/Documents/Bootcamp/Class/Homework/Team/LostNoMoreHw7/LostNoMore/LostNoMore/assets/images/newclouds.png');
+    background-image: url('/assets/images/newclouds.png');
 }
+
 .weatherToday {
     text-align: center;
     font-size: 2rem;
@@ -173,3 +174,59 @@ h5 {
     height: 2em;
 }
 
+.popup-overlay {
+  visibility: hidden;
+  position: absolute;
+  background: white;
+  border: 3px solid #d1cccc70;
+  width: 20%;
+  height: 30%;
+  left: 40%;
+}
+
+.popup-overlay.active {
+    /*displays pop-up when "active" class is present*/
+    visibility: visible;
+    text-align: center;
+  }
+
+  .popup-content {
+    /*Hides pop-up content when there is no "active" class */
+    visibility: hidden;
+    padding: 20px;
+  }
+
+
+  .popup-content.active {
+    /*Shows pop-up content when "active" class is present */
+    visibility: visible;
+  }
+
+  
+  .close {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #91b1bd;
+    padding: 10px;
+    border-radius: 10%;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+  }
+
+  .close:hover {
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+  }
+
+  .errtxt {
+      font-size: 2rem;
+      font-family: 'Patrick Hand';
+  }
+
+  .errp {
+      padding: 10px;
+  }
