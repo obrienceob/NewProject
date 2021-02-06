@@ -122,11 +122,11 @@ $(document).ready(function(){
 
         }
     )};
-
+    let map;
     function initMap(latitude, longitude) {
         const myLatLng = { lat: latitude, lng: longitude };
         const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 8,
+        zoom: 10,
         center: myLatLng,
         });
     }  
