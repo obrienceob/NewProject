@@ -1,16 +1,39 @@
-# Lost no more Project Requirements
+# Project Title: [Lost No More](https://obriencob.github.io/LostNoMore/) 
 
-# Project Title: [Lost No More] 
+# Requirements that were done during the project
+
+* Use a CSS framework other than Bootstrap.
+
+* Be deployed to GitHub Pages.
+
+* Be interactive (i.e., accept and respond to user input).
+
+* Use at least two server-side APIs.
+
+* Does not use alerts, confirms, or prompts (use modals).
+
+* Use client-side storage to store persistent data.
+* Be responsive.
+
+* Have a polished UI.
+
+* Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+
+* Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+
+
+
+
 
 # Project Description:
-In our project, we are going to create a visitor guide for cities. We will have:
-
-A map of the city that is input in the search bar
-Top locations to visit in the city listed on the map
-The current 5 day forcast for the city
-Descriptions for the places listed below the map
-A link to our group's git hub pages in the footer
-A description of the app in the header
+In the project Lost No More we created a visitor guide for cities. 
+The Application contains:
+* A map of the city that is input in the search bar
+* Top locations to visit in the city listed on the map
+* The current 5 day forcast for the city
+* Descriptions for the places listed below the map
+* A link to our group's git hub pages in the footer
+* A description of the app in the header
 
 # User Story
 As a user, I want to be able to look up a map of a city I am traveling to or in.
