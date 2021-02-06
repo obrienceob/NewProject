@@ -74,8 +74,8 @@
    width: 100%;
    background-color: hsl(204, 86%, 53%);
    color: white;
-   position: fixed;
    text-align: center;
+   position: relative;
 }
 
 
@@ -129,19 +129,47 @@ ul li ul li {
     border: 5px solid blue;
 }
 #sites {
-    height: 550px;
+    height: 500px;
     margin: 30px 0 30px 30px;
     padding: 5px;
     border: 5px solid rgb(0, 255, 115);
 }
+
 #weather {
-    height: 550px;
-    margin: 30px 30px 30px 10px;
+    height: 500px;
+    margin: 30px 30px 30px 30px;
     padding: 5px;
+    background-image: url('file:///Users/danio/Documents/Bootcamp/Class/Homework/Team/LostNoMoreHw7/LostNoMore/LostNoMore/assets/images/newclouds.png');
 }
-
-
 .weatherToday {
     text-align: center;
     font-size: 2rem;
+    background: transparent;
 }
+
+.forecast {
+    padding: 20px;
+    border-bottom: 1px black solid;
+    border-bottom-width: 80%;
+}
+#weather > article:nth-child(6) {
+    border-bottom: none;
+}
+
+h5,
+.weatherIcon,
+.txt {
+    display: inline;
+}
+h5 {
+    float: left;
+
+}
+.txt {
+    float: right;
+}
+.weatherIcon {
+    width: 2em;
+    height: 2em;
+}
+
