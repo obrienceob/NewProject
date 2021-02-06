@@ -137,7 +137,7 @@ ul li ul li {
 
 #weather {
     height: 500px;
-    margin: 30px 30px 30px 10px;
+    margin: 30px 30px 30px 30px;
     padding: 5px;
     background-image: url('file:///Users/danio/Documents/Bootcamp/Class/Homework/Team/LostNoMoreHw7/LostNoMore/LostNoMore/assets/images/newclouds.png');
 }
