@@ -23,10 +23,10 @@ I want to be able to see the 5 day forecast for the city I am visiting next to t
 
 link to wireframe Hanh created
 
-# APIs to be used
-Google Maps
-Google Places
-Open Weather API
+# APIs used
+[Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
+[Google Places API](https://cloud.google.com/maps-platform/places/)
+[Open Weather API](https://openweathermap.org/api)
 
 # Task breakdown
 Link to Presentation file https://docs.google.com/presentation/d/1bIjCnd0vBGhBoixsHXDmIbmuf2WR24Uum3jaKVZ8Irg/edit?usp=sharing
