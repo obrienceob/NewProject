@@ -40,3 +40,16 @@ Project development todo list(general):
 - [ ] Link Google Maps API (Amal + Conor)
 - [ ] Link Open Weather API (Amal + Conor)
 - [ ] Link Google Places API (Amal + Conor)
+
+
+##### Contributors:
+
+* [Amal Janabayev](https://github.com/Amal31497)
+* [Conor O'Brien](https://github.com/obrienceob)
+* [Danielle Orley](https://github.com/dorley1993)
+* [Hanh Le](https://github.com/hanhle1989)
+* [Sandu Corobcenco](https://github.com/SanduCorobcenco)
+##### Directory:
+
+* [Current Repository](https://github.com/obrienceob/LostNoMore)
+* [Website](https://obriencob.github.io/LostNoMore/)
