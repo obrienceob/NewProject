@@ -100,6 +100,7 @@ $(document).ready(function(){
                         var tempRound = data.list[i].main.temp_max;
                         var temp = $('<p class="txt">').text(tempRound.toFixed() + "°F");
 
+
                         //appends info together
                         column.append(cardT, newImg, temp);
 
@@ -115,9 +116,11 @@ $(document).ready(function(){
                     }
                 }
             }
+
         }
     )};
                    
+
     
     function initMap(latitude, longitude) {
     
@@ -130,4 +133,6 @@ $(document).ready(function(){
         });
     };    
 
+
 });
+
