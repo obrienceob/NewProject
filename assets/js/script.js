@@ -4,8 +4,7 @@ $(document).ready(function(){
 
     $("#search-btn").on('click', function(){
         var searchCity = $("#search-places").val();
-       $("#maps").empty();
-       $("#locationInfo").empty();
+        $("#weather").empty();
 
         //clears the users window afterwards
          if($("#search-places").val()) {
@@ -14,7 +13,6 @@ $(document).ready(function(){
         
         addMaps()
         addInfo()
-
         function addMaps(){
             var mapLocation = $("#maps")
             var maps = $("<div id='map' class='column'>");
@@ -28,9 +26,9 @@ $(document).ready(function(){
 
             getWeather(searchCity);
             getForecast(searchCity);
-          
-
             
+
+        
             locationInfo.append(topSites)
             locationInfo.append(weatherDashboard)
         }
@@ -70,13 +68,13 @@ $(document).ready(function(){
 
     //function for getting the forecast
     function getForecast(searchCity) {
-        $.ajax({
+         $.ajax({
             type: "GET",
             url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchCity + "&appid=" + weatherAPI + "&units=imperial",
             dataType: "json",
             success: function(data) {
                 console.log(data);
-                
+            
                 //loops through the data list and creates only 5 days
                 for(var i = 0; i < data.list.length; i++) {
 
@@ -85,7 +83,7 @@ $(document).ready(function(){
 
                         console.log(data.list[i].dt);
 
-                         //creates the dates title
+                        //creates the dates title
                         var forDate = new Date(data.list[i].dt_txt);
                         var options = { weekday: 'long'};
                         var weekDay = new Intl.DateTimeFormat('en-US', options).format(forDate);
@@ -95,13 +93,13 @@ $(document).ready(function(){
 
                         //column with title, img, temp, humidity
                         var column = $('<article class="forecast">');
-             
+         
                         var cardT = $('<h5 class="forecast-date">').text(dateTxt);
- 
+
                         var newImg = $('<img class="weatherIcon">').attr("src", "https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png"); 
                         var tempRound = data.list[i].main.temp_max;
                         var temp = $('<p class="txt">').text(tempRound.toFixed() + "°F");
- 
+
                         //appends info together
                         column.append(cardT, newImg, temp);
 
@@ -111,7 +109,7 @@ $(document).ready(function(){
                         initMap(latitude, longitude);
                         console.log(longitude);
                         console.log(latitude);
- 
+
                         //appends to html row
                         $("#weather").append(column);
                     }
@@ -119,8 +117,11 @@ $(document).ready(function(){
             }
         }
     )};
-
+                   
+    
     function initMap(latitude, longitude) {
+    
+    
         // var latMap = 47.6062;
         // var longMap = -122.3321;
         const myLatLng = { lat: latitude, lng: longitude };
@@ -128,5 +129,6 @@ $(document).ready(function(){
         zoom: 8,
         center: myLatLng,
         });
-    };   
+    };    
+
 });
