@@ -1,6 +1,8 @@
 $(document).ready(function(){
     var weatherAPI = "424b27cb93fafd7914e312602e3d2a39";
     $("#weather").empty();
+    var long = '';
+    var lat= '';
 
     $("#search-btn").on('click', function(){
         var searchCity = $("#search-places").val();
@@ -74,7 +76,12 @@ $(document).ready(function(){
             dataType: "json",
             success: function(data) {
                 console.log(data);
-            
+                var longitude = data.city.coord.lon;
+                var latitude = data.city.coord.lat;
+                console.log(longitude);
+                console.log(latitude);
+
+
                 //loops through the data list and creates only 5 days
                 for(var i = 0; i < data.list.length; i++) {
 
@@ -100,34 +107,29 @@ $(document).ready(function(){
                         var tempRound = data.list[i].main.temp_max;
                         var temp = $('<p class="txt">').text(tempRound.toFixed() + "°F");
 
+
                         //appends info together
                         column.append(cardT, newImg, temp);
 
-                        //adding in the longitude and latitude variables for the google maps call
-                        var longitude = data.city.coord.lon;
-                        var latitude = data.city.coord.lat;
-                        initMap(latitude, longitude);
-                        console.log(longitude);
-                        console.log(latitude);
+                        
 
                         //appends to html row
                         $("#weather").append(column);
+
                     }
                 }
-            }
+
+                initMap(latitude, longitude);    
+            }  
+
         }
     )};
-                   
-    
+
     function initMap(latitude, longitude) {
-    
-        // var latMap = 47.6062;
-        // var longMap = -122.3321;
         const myLatLng = { lat: latitude, lng: longitude };
         const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 8,
         center: myLatLng,
         });
-    };    
-
+    }  
 });
