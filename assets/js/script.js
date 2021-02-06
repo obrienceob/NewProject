@@ -121,7 +121,6 @@ $(document).ready(function(){
     
     function initMap(latitude, longitude) {
     
-    
         // var latMap = 47.6062;
         // var longMap = -122.3321;
         const myLatLng = { lat: latitude, lng: longitude };
