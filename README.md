@@ -23,10 +23,10 @@ I want to be able to see the 5 day forecast for the city I am visiting next to t
 
 link to wireframe Hanh created
 
-# APIs to be used
-Google Maps
-Google Places
-Open Weather API
+# APIs used
+[Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
+[Google Places API](https://cloud.google.com/maps-platform/places/)
+[Open Weather API](https://openweathermap.org/api)
 
 # Task breakdown
 Link to Presentation file https://docs.google.com/presentation/d/1bIjCnd0vBGhBoixsHXDmIbmuf2WR24Uum3jaKVZ8Irg/edit?usp=sharing
@@ -40,3 +40,16 @@ Project development todo list(general):
 - [ ] Link Google Maps API (Amal + Conor)
 - [ ] Link Open Weather API (Amal + Conor)
 - [ ] Link Google Places API (Amal + Conor)
+
+
+##### Contributors:
+
+* [Amal Janabayev](https://github.com/Amal31497)
+* [Conor O'Brien](https://github.com/obrienceob)
+* [Danielle Orley](https://github.com/dorley1993)
+* [Hanh Le](https://github.com/hanhle1989)
+* [Sandu Corobcenco](https://github.com/SanduCorobcenco)
+##### Directory:
+
+* [Current Repository](https://github.com/obrienceob/LostNoMore)
+* [Website](https://obriencob.github.io/LostNoMore/)
