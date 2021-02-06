@@ -116,7 +116,6 @@ $(document).ready(function(){
                         $("#weather").append(column);
                     }
                 }
-
             }
         }
     )};
@@ -129,8 +128,5 @@ $(document).ready(function(){
         zoom: 8,
         center: myLatLng,
         });
-    };
-    
-        
-
+    };   
 });
