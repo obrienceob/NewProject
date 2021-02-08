@@ -131,7 +131,6 @@ ul li ul li {
     height: 530px;
     margin: 30px 0 30px 30px;
     padding: 5px;
-    border: 5px solid rgb(0, 255, 115);
 }
 
 #weather {
@@ -154,6 +153,14 @@ ul li ul li {
 }
 #weather > article:nth-child(6) {
     border-bottom: none;
+}
+
+.categoryImage{
+    border-radius: 50%;
+}
+
+.placeImage{
+    border-radius: 20%;
 }
 
 h5,

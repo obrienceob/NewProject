@@ -1,6 +1,7 @@
 $(document).ready(function(){
     //weather API
     var weatherAPI = "424b27cb93fafd7914e312602e3d2a39";
+    var googleAPI = "AIzaSyA9KoDHkh0ImS4kCiFNvslAws_sa4MVNXE";
     //city array for local storage
     var cityI = [];
 
@@ -12,7 +13,7 @@ $(document).ready(function(){
 
     //click function
     $("#search-btn").on('click', function(){
-    
+        $("#sites").removeAttr("class").attr("class", "column is-7")
         //var for search value
         var searchCity = $("#search-places").val();
 
@@ -53,10 +54,8 @@ $(document).ready(function(){
 
                 //creates the sites and weather
                 var locationInfo = $("#locationInfo")
-                var topSites = $("<div id='sites' class='column is-7 site'>");
                 var weatherDashboard = $("<div id='weather' class='column is-4 weathT'>");
                 //appends to them 
-                locationInfo.append(topSites);
                 locationInfo.append(weatherDashboard);
 
                 //weather title, city searched
@@ -151,7 +150,8 @@ $(document).ready(function(){
                     }
                 }
                 //function for map call
-                initMap(latitude, longitude);    
+                initMap(latitude, longitude); 
+                findPlaces(searchCity)
             }  
         }
     )};
@@ -165,4 +165,34 @@ $(document).ready(function(){
         center: myLatLng,
         });
     }  
+
+
+    function findPlaces(city){
+        var categories = $(".categoryImage")
+        categories.on("click", function(){
+        $("#row-1").removeAttr("class").attr("class", "columns is-1")
+        $("#row-2").removeAttr("class").attr("class", "columns is-1")
+        var selection = $(this).attr("id")
+        
+        var proxyurl = "https://cors-anywhere.herokuapp.com/";
+        var url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${selection}+in+${city}&key=${googleAPI}`; // site that doesn’t send Access-Control-*
+        
+        fetch(proxyurl + url) 
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            var results = data.results
+            console.log(data)
+            for( var i = 1; i < 7; ++i ){
+               var photoRef = results[i].photos[0].photo_reference
+               var picUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoRef}&key=${googleAPI}`
+               $("#placeImage-"+i).attr("src", picUrl)
+               $("#name-"+i).text(data.results[i].name)
+               $("#rating-"+i).text(data.results[i].rating)
+            }
+        })
+        .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+    })
+    } // End function
 });
