@@ -2,10 +2,11 @@ $(document).ready(function(){
     //weather API
     var weatherAPI = "424b27cb93fafd7914e312602e3d2a39";
     var googleAPI = "AIzaSyA9KoDHkh0ImS4kCiFNvslAws_sa4MVNXE";
+
     //city array for local storage
     var cityI = [];
 
-    //gets local storage
+    //gets local storage, saves to array
     if(localStorage.getItem("city") !== null) {
     cityI = JSON.parse(localStorage.getItem("city"));
     }
@@ -13,19 +14,16 @@ $(document).ready(function(){
 
     //click function
     $("#search-btn").on('click', function(){
-        $("#sites").removeAttr("class").attr("class", "column is-7")
+        
         //var for search value
         var searchCity = $("#search-places").val();
 
-        //local storage save
-        cityI.push($("#search-places").val());
-        window.localStorage.setItem("city", JSON.stringify(cityI));
-        
 
         //removes the prevous info when search again
         $(".weathT").remove();
         $(".maps").remove();
-        $(".site").remove()
+        $("#sites").addClass("is-hidden");
+        
         
 
         //clears the users window afterwards
@@ -46,6 +44,8 @@ $(document).ready(function(){
             url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid=" + weatherAPI + "&units=imperial",
             dataType: "json",
             success: function(data) {
+                //removes attr from site
+                $("#sites").removeAttr("class").attr("class", "column is-7")
                 
                 //creates map area and appends to map
                 var mapLocation = $("#maps")
@@ -83,9 +83,10 @@ $(document).ready(function(){
                 var popUInfo = $('<h2 class="errtxt">').text("Error");
                 var popP = $('<p class="errp">').text("The City searched was not found, Try Again.");
                 var closepbtn = $('<button class="close">').text("close");
+
     
                 //appends it to the html
-                $(".error").append(popUpOL.append(popup.append(popUInfo, popP, closepbtn)));
+                $(".error").append(popUpOL.append(popup.append(popUInfo, popP, list, closepbtn)));
 
                 //creates the popup content class for it to be active and popup
                 $(".popup-overlay, .popup-content").addClass("active");
@@ -151,7 +152,8 @@ $(document).ready(function(){
                 }
                 //function for map call
                 initMap(latitude, longitude); 
-                findPlaces(searchCity)
+                findPlaces(searchCity);
+                
             }  
         }
     )};
@@ -194,5 +196,10 @@ $(document).ready(function(){
         })
         .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
     })
+
+    //local storage save
+    cityI.push(city);
+    window.localStorage.setItem("city", JSON.stringify(cityI));
+    
     } // End function
 });
