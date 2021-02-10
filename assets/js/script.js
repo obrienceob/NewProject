@@ -159,14 +159,47 @@ $(document).ready(function(){
     )};
 
     //map function for map uses google map api
-    let map;
-    function initMap(latitude, longitude) {
-        const myLatLng = { lat: latitude, lng: longitude };
-        const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 10,
-        center: myLatLng,
+      let map;
+    function initMap(latitude,longitude) {
+        var myLatlng = new google.maps.LatLng(latitude, longitude);
+        var myOptions = {
+            zoom: 11,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        map = new google.maps.Map(document.getElementById("map"), myOptions);
+        
+    }
+    
+    // Function for adding a marker to the page.
+    function addMarker(location) {
+        marker = new google.maps.Marker({
+            position: location,
+            map: map,
+
         });
-    }  
+        
+    }
+
+
+    function addInfoWindow(marker, message) {
+
+        var infoWindow = new google.maps.InfoWindow({
+            content: message
+        });
+
+        
+            infoWindow.open(map, marker);
+        
+    }
+
+    // Testing the addMarker function
+    function TestMarker(latVar, longVar) {
+           locationVar = new google.maps.LatLng(latVar, longVar);
+           addMarker(locationVar);
+    }
+    
+
 
 
     function findPlaces(city){
@@ -192,6 +225,14 @@ $(document).ready(function(){
                $("#placeImage-"+i).attr("src", picUrl)
                $("#name-"+i).text(data.results[i].name)
                $("#rating-"+i).text("Rating: " + data.results[i].rating)
+                
+               var latVar = data.results[i].geometry.location.lat;
+                var longVar = data.results[i].geometry.location.lng;
+                var content = data.results[i].name;
+               // Adding Markers
+               TestMarker(latVar, longVar);
+               // Adding info to Markers
+               addInfoWindow(marker, content);
             }
         })
         .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
