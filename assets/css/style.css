@@ -126,7 +126,7 @@ ul li ul li {
     padding: 10px;
 }
 #sites {
-    height: 530px;
+   
     margin: 30px 0 30px 30px;
     padding: 5px;
 }
@@ -136,7 +136,9 @@ ul li ul li {
     height: 700px;
     margin: 30px 30px 30px 30px;
     padding: 5px;
-    background-image: url(../images/newclouds.png);
+    background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(../images/clouds.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .weatherToday {
@@ -200,24 +202,22 @@ h5 {
   border: 3px solid #d1cccc70;
   width: 20%;
   height: 30%;
-  left: 40%;
+  left: 30%;
+  margin: 20% 0 0 0;
 }
 
 .popup-overlay.active {
-    /*displays pop-up when "active" class is present*/
     visibility: visible;
     text-align: center;
   }
 
   .popup-content {
-    /*Hides pop-up content when there is no "active" class */
     visibility: hidden;
     padding: 20px;
   }
 
 
   .popup-content.active {
-    /*Shows pop-up content when "active" class is present */
     visibility: visible;
   }
 
@@ -249,3 +249,194 @@ h5 {
   .errp {
       padding: 10px;
   }
+
+
+
+/*media queries*/
+
+/*screens 299px*/
+@media screen and (max-width: 299px) {
+    .header {
+        height: 500px;
+    }
+    .logo {
+        font-size: 50px;
+        margin: 100px 0 0 0;
+    }
+    #search-places {
+        height: 35px;
+        width: 240px;
+        font-size:20px;
+    }
+    #search-btn {
+        height: 39px;
+        width: 70px;
+        font-size: 20px;
+        border: 0;
+    }
+    .footer {
+        padding: 0;
+    }
+    .popup-overlay {
+        width: 40%;
+        height: 40%;
+        left: 30%;
+      }
+
+    .popup-content {
+        padding: 10px;
+    }
+    .errtxt {
+      font-size: 20px;
+    }
+    .errp {
+        font-size: 12px;
+    }
+    .close {
+        font-size: 12px;
+    }
+    .image {
+        display: block;
+       width: 250px;
+    }
+}
+
+/*screens 300px to 400px*/
+@media screen 
+and (min-width: 300px)
+and (max-width: 400px) {
+    .header {
+        height: 500px;
+    }
+    .logo {
+        font-size: 50px;
+        margin: 150px 0 0 0;
+    }
+    #search-places {
+        height: 35px;
+        width: 240px;
+        font-size:20px;
+    }
+    #search-btn {
+        height: 39px;
+        width: 70px;
+        font-size: 20px;
+        border: 0;
+    }
+    .footer {
+        padding: 0;
+    }
+    .popup-overlay {
+        width: 40%;
+        height: 40%;
+        left: 20%;
+      }
+
+    .popup-content {
+        padding: 10px;
+    }
+    .errtxt {
+      font-size: 20px;
+    }
+    .errp {
+        font-size: 12px;
+    }
+    .close {
+        font-size: 12px;
+    }
+    #cafe,
+    #lodging,
+    #gas_station,
+    #restaurant,
+    #campgrounds {
+        height: 80% !important;
+        width: 80% !important;
+        
+    }
+    
+}
+/*screens 401px to 768px*/
+@media screen 
+and (min-width: 401px)
+and (max-width: 768px) {
+    .header {
+        height: 500px;
+    }
+    .logo {
+        font-size: 60px;
+        margin: 150px 0 0 0;
+    }
+    #search-places {
+        height: 40px;
+        width: 340px;
+        font-size:20px;
+    }
+    #search-btn {
+        height: 43px;
+        width: 70px;
+        font-size: 20px;
+        border: 0;
+    }
+    .footer {
+        padding: 0;
+    }
+    .popup-overlay {
+        left: 30%;
+      }
+    #cafe,
+    #lodging,
+    #gas_station,
+    #restaurant,
+    #campgrounds {
+        height: 80% !important;
+        width: 80% !important;
+        
+    }
+
+
+}
+
+/*screens 768px to 992px*/
+@media screen 
+and (min-width: 769px)
+and (max-width: 992px) {
+    .header {
+        height: 500px;
+    }
+    .logo {
+        font-size: 85px;
+        margin: 150px 0 0 0;
+    }
+    #search-places {
+        height: 40px;
+        width: 540px;
+        font-size:20px;
+    }
+    #search-btn {
+        height: 43px;
+        width: 80px;
+        font-size: 20px;
+        border: 0;
+    }
+    .footer {
+        padding: 0;
+    }
+    .popup-overlay {
+        width: 40%;
+        height: 40%;
+        left: 30%;
+      }
+
+    .popup-content {
+        padding: 10px;
+    }
+    .errtxt {
+      font-size: 2rem;
+    }
+    .errp {
+        font-size: 1rem;
+    }
+    .close {
+        font-size: 12px;
+    }
+}
