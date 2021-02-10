@@ -66,19 +66,6 @@
     border: 0;
 }
 
-
-
-.footer {
-   left: 0;
-   bottom: 0;
-   padding: 10px;
-   width: 100%;
-   background-color: hsl(204, 86%, 53%);
-   color: white;
-   text-align: center;
-   position: relative;
-}
-
 body > div > footer > div > ul > li > a,
 body > div > footer > div > ul > li > ul > li > a {
     color: white;
@@ -133,13 +120,14 @@ ul li ul li {
 }
 
 #weather {
-    height: 1100px;
+    height: 800px;
+    width: auto;
     margin: 30px;
     padding: 5px;
     background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(../images/clearsky.gif);
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .weatherToday {
@@ -163,19 +151,16 @@ ul li ul li {
 }
 
 .forecast {
-    margin: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 20px;
     border-bottom: 1px black solid;
 }
 
 #weather > article:nth-child(6) {
     border-bottom: none;
-}
-
-#sites{
-    margin-left: 50px;
 }
 
 .card-image{
@@ -192,9 +177,11 @@ ul li ul li {
 }
 
 .name{
+    margin-left: 15px;
     float: left;
 }
 .rating{
+    margin-left: 15px;
     float: left;
 }
 
@@ -412,9 +399,20 @@ and (max-width: 768px) {
         width: 80% !important;
         
     }
-
-
 }
+
+
+.footer {
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+    background-color: hsl(204, 86%, 53%);
+    color: white;
+    text-align: center;
+    position: relative;
+ }
+
 
 /*screens 768px to 992px*/
 @media screen 

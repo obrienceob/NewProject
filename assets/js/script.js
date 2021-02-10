@@ -45,7 +45,7 @@ $(document).ready(function(){
             dataType: "json",
             success: function(data) {
                 //removes attr from site
-                $("#sites").removeAttr("class").attr("class", "column is-one-quarters")
+                $("#sites").removeAttr("class").attr("class", "column")
                 
                 //creates map area and appends to map
                 var mapLocation = $("#maps")
