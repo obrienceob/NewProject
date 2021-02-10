@@ -53,6 +53,7 @@
 }
 
 #search-places {
+    padding: 15px;
     height: 50px;
     width: 660px;
     font-size:20px;
@@ -121,50 +122,69 @@ ul li ul li {
   }
 
 #map {
-    height: 500px;
+    height: 600px;
     margin: 30px 30px 0 30px;
     padding: 10px;
 }
 #sites {
-   
+    height: 530px;
     margin: 30px 0 30px 30px;
     padding: 5px;
 }
 
 #weather {
-    border-radius:5%;
-    height: 700px;
-    margin: 30px 30px 30px 30px;
+    height: 1100px;
+    margin: 30px;
     padding: 5px;
-    background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(../images/clouds.gif);
+    background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(../images/clearsky.gif);
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 50px;
 }
 
 .weatherToday {
-    text-align: center;
-    font-size: 3rem;
+    margin: 20px;
+    font-size: 30px;
     background: transparent;
+    box-shadow: none;
+    padding-bottom: 50px;
+    border-bottom: 2px black solid;
+    border-radius: 0px;
+}
+
+.card-title{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.card-text{
+    font-size: 22px;
+    padding-bottom: 10px;
 }
 
 .forecast {
-    padding: 20px;
-    padding-top:35px;
-    padding-bottom:35px;
-    border-bottom: 1.5px black solid;
-    border-bottom-width: 80%;
-    font-size: large;
+    margin: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    border-bottom: 1px black solid;
 }
+
 #weather > article:nth-child(6) {
     border-bottom: none;
 }
 
-.categoryImage{
-    border-radius: 50%;
+#sites{
+    margin-left: 50px;
 }
 
-.placeImage{
-    border-radius: 10%;
+.card-image{
+    text-align: center;
+}
+
+.categoryImage{
+    border-radius: 50%;
+    padding: 10px;
 }
 
 .category{
@@ -211,18 +231,18 @@ h5 {
     text-align: center;
   }
 
-  .popup-content {
+.popup-content {
     visibility: hidden;
     padding: 20px;
   }
 
 
-  .popup-content.active {
+.popup-content.active {
     visibility: visible;
   }
 
   
-  .close {
+.close {
     color: #fff !important;
     text-transform: uppercase;
     text-decoration: none;
@@ -234,19 +254,19 @@ h5 {
     transition: all 0.4s ease 0s;
   }
 
-  .close:hover {
+.close:hover {
     text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
     -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
     -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
     transition: all 0.4s ease 0s;
   }
 
-  .errtxt {
+.errtxt {
       font-size: 2rem;
       font-family: 'Patrick Hand';
   }
 
-  .errp {
+.errp {
       padding: 10px;
   }
 

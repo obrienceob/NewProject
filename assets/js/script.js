@@ -45,7 +45,7 @@ $(document).ready(function(){
             dataType: "json",
             success: function(data) {
                 //removes attr from site
-                $("#sites").removeAttr("class").attr("class", "column is-7")
+                $("#sites").removeAttr("class").attr("class", "column is-one-quarters")
                 
                 //creates map area and appends to map
                 var mapLocation = $("#maps")
@@ -54,7 +54,7 @@ $(document).ready(function(){
 
                 //creates the sites and weather
                 var locationInfo = $("#locationInfo")
-                var weatherDashboard = $("<div id='weather' class='column is-4 weathT'>");
+                var weatherDashboard = $("<div id='weather' class='column is-2 weathT'>");
                 //appends to them 
                 locationInfo.append(weatherDashboard);
 
@@ -62,15 +62,18 @@ $(document).ready(function(){
                 var title = data.name;
              
                 //creates the card, adds the info from the data from the api to the card
-                var weatherTitle = $('<h3 class="card-title" id="city">').text(title);
+                var weatherTitle = $('<h2 class="card-title" id="city">').text(title);
+                var todayDate = $('<h1 class="todayDate">').text(new Date().toLocaleDateString());
                 var weatherCard = $('<article class="card weatherToday">');
-                var temperature= $('<p class="card-text">').text(data.main.temp.toFixed() +  " °F");
+                var temperature = $('<p class="card-text">').text("Temperature: " + data.main.temp.toFixed() + "°F");
+                var humidity = $('<p class="card-text">').text("Humidity: " + data.main.humidity + "%");
+                var windSpeed = $('<p class="card-text">').text("Wind Speed: " + data.wind.speed + " mph");
                 var card = $('<div class="card-body">');
                 var image = $("<img class='img-weather'>").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
 
                 //appends it all together to add it to the html
                 weatherTitle.append(image);
-                card.append(weatherTitle, temperature);
+                card.append(weatherTitle, todayDate, image, temperature, humidity, windSpeed);
                 weatherCard.append(card);
                 $("#weather").append(weatherCard);
             },
@@ -159,47 +162,14 @@ $(document).ready(function(){
     )};
 
     //map function for map uses google map api
-      let map;
-    function initMap(latitude,longitude) {
-        var myLatlng = new google.maps.LatLng(latitude, longitude);
-        var myOptions = {
-            zoom: 11,
-            center: myLatlng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        map = new google.maps.Map(document.getElementById("map"), myOptions);
-        
-    }
-    
-    // Function for adding a marker to the page.
-    function addMarker(location) {
-        marker = new google.maps.Marker({
-            position: location,
-            map: map,
-
+    let map;
+    function initMap(latitude, longitude) {
+        const myLatLng = { lat: latitude, lng: longitude };
+        const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 10,
+        center: myLatLng,
         });
-        
-    }
-
-
-    function addInfoWindow(marker, message) {
-
-        var infoWindow = new google.maps.InfoWindow({
-            content: message
-        });
-
-        
-            infoWindow.open(map, marker);
-        
-    }
-
-    // Testing the addMarker function
-    function TestMarker(latVar, longVar) {
-           locationVar = new google.maps.LatLng(latVar, longVar);
-           addMarker(locationVar);
-    }
-    
-
+    }  
 
 
     function findPlaces(city){
@@ -225,14 +195,6 @@ $(document).ready(function(){
                $("#placeImage-"+i).attr("src", picUrl)
                $("#name-"+i).text(data.results[i].name)
                $("#rating-"+i).text("Rating: " + data.results[i].rating)
-                
-               var latVar = data.results[i].geometry.location.lat;
-                var longVar = data.results[i].geometry.location.lng;
-                var content = data.results[i].name;
-               // Adding Markers
-               TestMarker(latVar, longVar);
-               // Adding info to Markers
-               addInfoWindow(marker, content);
             }
         })
         .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
