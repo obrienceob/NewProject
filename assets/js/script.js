@@ -2,10 +2,11 @@ $(document).ready(function(){
     //weather API
     var weatherAPI = "424b27cb93fafd7914e312602e3d2a39";
     var googleAPI = "AIzaSyA9KoDHkh0ImS4kCiFNvslAws_sa4MVNXE";
+
     //city array for local storage
     var cityI = [];
 
-    //gets local storage
+    //gets local storage, saves to array
     if(localStorage.getItem("city") !== null) {
     cityI = JSON.parse(localStorage.getItem("city"));
     }
@@ -13,19 +14,16 @@ $(document).ready(function(){
 
     //click function
     $("#search-btn").on('click', function(){
-        $("#sites").removeAttr("class").attr("class", "column is-7")
+        
         //var for search value
         var searchCity = $("#search-places").val();
 
-        //local storage save
-        cityI.push($("#search-places").val());
-        window.localStorage.setItem("city", JSON.stringify(cityI));
-        
 
         //removes the prevous info when search again
         $(".weathT").remove();
         $(".maps").remove();
-        $(".site").remove()
+        $("#sites").addClass("is-hidden");
+        
         
 
         //clears the users window afterwards
@@ -46,6 +44,8 @@ $(document).ready(function(){
             url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid=" + weatherAPI + "&units=imperial",
             dataType: "json",
             success: function(data) {
+                //removes attr from site
+                $("#sites").removeAttr("class").attr("class", "column is-one-quarters")
                 
                 //creates map area and appends to map
                 var mapLocation = $("#maps")
@@ -54,7 +54,7 @@ $(document).ready(function(){
 
                 //creates the sites and weather
                 var locationInfo = $("#locationInfo")
-                var weatherDashboard = $("<div id='weather' class='column is-4 weathT'>");
+                var weatherDashboard = $("<div id='weather' class='column is-2 weathT'>");
                 //appends to them 
                 locationInfo.append(weatherDashboard);
 
@@ -62,15 +62,18 @@ $(document).ready(function(){
                 var title = data.name;
              
                 //creates the card, adds the info from the data from the api to the card
-                var weatherTitle = $('<h3 class="card-title" id="city">').text(title);
+                var weatherTitle = $('<h2 class="card-title" id="city">').text(title);
+                var todayDate = $('<h1 class="todayDate">').text(new Date().toLocaleDateString());
                 var weatherCard = $('<article class="card weatherToday">');
-                var temperature= $('<p class="card-text">').text(data.main.temp.toFixed() +  " °F");
+                var temperature = $('<p class="card-text">').text("Temperature: " + data.main.temp.toFixed() + "°F");
+                var humidity = $('<p class="card-text">').text("Humidity: " + data.main.humidity + "%");
+                var windSpeed = $('<p class="card-text">').text("Wind Speed: " + data.wind.speed + " mph");
                 var card = $('<div class="card-body">');
                 var image = $("<img class='img-weather'>").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
 
                 //appends it all together to add it to the html
                 weatherTitle.append(image);
-                card.append(weatherTitle, temperature);
+                card.append(weatherTitle, todayDate, image, temperature, humidity, windSpeed);
                 weatherCard.append(card);
                 $("#weather").append(weatherCard);
             },
@@ -83,9 +86,10 @@ $(document).ready(function(){
                 var popUInfo = $('<h2 class="errtxt">').text("Error");
                 var popP = $('<p class="errp">').text("The City searched was not found, Try Again.");
                 var closepbtn = $('<button class="close">').text("close");
+
     
                 //appends it to the html
-                $(".error").append(popUpOL.append(popup.append(popUInfo, popP, closepbtn)));
+                $(".error").append(popUpOL.append(popup.append(popUInfo, popP, list, closepbtn)));
 
                 //creates the popup content class for it to be active and popup
                 $(".popup-overlay, .popup-content").addClass("active");
@@ -150,7 +154,11 @@ $(document).ready(function(){
                 //function for map call
                 
                 initMap(latitude, longitude); 
+<<<<<<< HEAD
                 findPlaces(searchCity)
+=======
+                findPlaces(searchCity);
+>>>>>>> 6fdf197c010667beba59beb6d7e00f0c5bf71a09
                 
             }  
         }
@@ -193,6 +201,11 @@ $(document).ready(function(){
         })
         .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
     })
+
+    //local storage save
+    cityI.push(city);
+    window.localStorage.setItem("city", JSON.stringify(cityI));
+    
     } // End function
 
     $(".categoryImage").on("mouseenter", function(){
