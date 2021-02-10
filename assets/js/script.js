@@ -154,11 +154,8 @@ $(document).ready(function(){
                 //function for map call
                 
                 initMap(latitude, longitude); 
-<<<<<<< HEAD
                 findPlaces(searchCity)
-=======
-                findPlaces(searchCity);
->>>>>>> 6fdf197c010667beba59beb6d7e00f0c5bf71a09
+
                 
             }  
         }
