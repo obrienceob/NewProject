@@ -107,7 +107,7 @@ $(document).ready(function(){
             url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchCity + "&appid=" + weatherAPI + "&units=imperial",
             dataType: "json",
             success: function(data) {
-                console.log(data);
+                //console.log(data);
                 var longitude = data.city.coord.lon;
                 var latitude = data.city.coord.lat;
                 console.log(longitude);
@@ -120,7 +120,7 @@ $(document).ready(function(){
                     //grabs the info from 3pm and creates the data 
                     if(data.list[i].dt_txt.indexOf("15:00:00") != -1) {
 
-                        console.log(data.list[i].dt);
+                        //console.log(data.list[i].dt);
 
                         //creates the dates title
                         var forDate = new Date(data.list[i].dt_txt);
@@ -185,13 +185,13 @@ $(document).ready(function(){
         })
         .then(function(data){
             var results = data.results
-            console.log(data)
-            for( var i = 1; i < 7; ++i ){
+            //console.log(data)
+            for( var i = 0; i < 7; ++i ){
                var photoRef = results[i].photos[0].photo_reference
                var picUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoRef}&key=${googleAPI}`
                $("#placeImage-"+i).attr("src", picUrl)
                $("#name-"+i).text(data.results[i].name)
-               $("#rating-"+i).text(data.results[i].rating)
+               $("#rating-"+i).text("Rating: " + data.results[i].rating)
             }
         })
         .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
@@ -202,4 +202,23 @@ $(document).ready(function(){
     window.localStorage.setItem("city", JSON.stringify(cityI));
     
     } // End function
+
+    $(".categoryImage").on("mouseenter", function(){
+        $(this).animate({"height":"95%","width":"95%","vertical-align":"center","justify-content":"center"},50) 
+    })
+    $(".categoryImage").on("mouseleave", function(){
+        $(this).animate({"height":"100%","width":"100%"},50)
+    })
+    $(".categoryImage").on("click", function(){
+        $(this).animate({"height":"90%","width":"90%"},3).animate({"height":"100%","width":"100%"},3)
+        $("#locationInfo").css({"margin-bottom":"70px"})
+    })
+
+    $(".placeImage").on("mouseenter", function(){
+        $(this).animate({"height":"95%","width":"95%","vertical-align":"center","justify-content":"center"},50) 
+    })
+    $(".placeImage").on("mouseleave", function(){
+        $(this).animate({"height":"100%","width":"100%"},50)
+    })
+    
 });
