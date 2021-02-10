@@ -111,8 +111,6 @@ $(document).ready(function(){
                 var latitude = data.city.coord.lat;
                 console.log(longitude);
                 console.log(latitude);
-
-
                 //loops through the data list and creates only 5 days
                 for(var i = 0; i < data.list.length; i++) {
 
@@ -150,8 +148,10 @@ $(document).ready(function(){
                     }
                 }
                 //function for map call
+                
                 initMap(latitude, longitude); 
                 findPlaces(searchCity)
+                
             }  
         }
     )};
@@ -173,21 +173,20 @@ $(document).ready(function(){
         $("#row-1").removeAttr("class").attr("class", "columns is-1")
         $("#row-2").removeAttr("class").attr("class", "columns is-1")
         var selection = $(this).attr("id")
-        
         var proxyurl = "https://cors-anywhere.herokuapp.com/";
         var url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${selection}+in+${city}&key=${googleAPI}`; // site that doesn’t send Access-Control-*
-        
         fetch(proxyurl + url) 
         .then(function(response){
             return response.json()
         })
         .then(function(data){
             var results = data.results
-            //console.log(data)
-            for( var i = 0; i < 7; ++i ){
+            console.log(data)
+            for( var i = 1; i < 7; i++ ){
                var photoRef = results[i].photos[0].photo_reference
                var picUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoRef}&key=${googleAPI}`
                $("#placeImage-"+i).attr("src", picUrl)
+               $("#placeImage-"+i).attr("href")
                $("#name-"+i).text(data.results[i].name)
                $("#rating-"+i).text("Rating: " + data.results[i].rating)
             }
@@ -208,10 +207,7 @@ $(document).ready(function(){
     })
 
     $(".placeImage").on("mouseenter", function(){
-        $(this).animate({"height":"95%","width":"95%","vertical-align":"center","justify-content":"center"},50) 
-    })
-    $(".placeImage").on("mouseleave", function(){
-        $(this).animate({"height":"100%","width":"100%"},50)
+        $(this).animate({"border":"2px solid red","vertical-align":"center","justify-content":"center"},50) 
     })
     
 });
