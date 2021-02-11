@@ -256,6 +256,16 @@ h5 {
 .errp {
       padding: 10px;
   }
+.footer {
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+    background-color: hsl(204, 86%, 53%);
+    color: white;
+    text-align: center;
+    position: relative;
+ }
 
 
 
@@ -306,6 +316,10 @@ h5 {
         display: block;
        width: 250px;
     }
+    #weather, 
+    #sites {
+        display: inline-block;
+    }
 }
 
 /*screens 300px to 400px*/
@@ -351,14 +365,14 @@ and (max-width: 400px) {
     .close {
         font-size: 12px;
     }
-    #cafe,
-    #lodging,
-    #gas_station,
-    #restaurant,
-    #campgrounds {
-        height: 80% !important;
-        width: 80% !important;
-        
+    .image {
+       display: block;
+       width: 250px;
+    }
+
+    #weather, 
+    #sites {
+        display: inline-block;
     }
     
 }
@@ -390,28 +404,13 @@ and (max-width: 768px) {
     .popup-overlay {
         left: 30%;
       }
-    #cafe,
-    #lodging,
-    #gas_station,
-    #restaurant,
-    #campgrounds {
-        height: 80% !important;
-        width: 80% !important;
-        
-    }
+      
+     #weather, 
+     #sites {
+         display: inline-block;
+     }
 }
 
-
-.footer {
-    left: 0;
-    bottom: 0;
-    padding: 10px;
-    width: 100%;
-    background-color: hsl(204, 86%, 53%);
-    color: white;
-    text-align: center;
-    position: relative;
- }
 
 
 /*screens 768px to 992px*/

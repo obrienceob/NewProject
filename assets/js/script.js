@@ -89,7 +89,7 @@ $(document).ready(function(){
 
     
                 //appends it to the html
-                $(".error").append(popUpOL.append(popup.append(popUInfo, popP, list, closepbtn)));
+                $(".error").append(popUpOL.append(popup.append(popUInfo, popP, closepbtn)));
 
                 //creates the popup content class for it to be active and popup
                 $(".popup-overlay, .popup-content").addClass("active");
@@ -113,8 +113,8 @@ $(document).ready(function(){
                 //console.log(data);
                 var longitude = data.city.coord.lon;
                 var latitude = data.city.coord.lat;
-                console.log(longitude);
-                console.log(latitude);
+                //console.log(longitude);
+                //console.log(latitude);
                 //loops through the data list and creates only 5 days
                 for(var i = 0; i < data.list.length; i++) {
 
@@ -217,7 +217,7 @@ $(document).ready(function(){
         })
         .then(function(data){
             var results = data.results
-            console.log(data)
+            //console.log(data)
             for( var i = 1; i < 7; i++ ){
                var photoRef = results[i].photos[0].photo_reference
                var picUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoRef}&key=${googleAPI}`

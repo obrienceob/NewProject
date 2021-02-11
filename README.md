@@ -1,78 +1,102 @@
-# Project Title: [Lost No More](https://obriencob.github.io/LostNoMore/) 
+# Lost No More
+Have you ever visited a city and felt lost, not know what to do? Well feel lost no more. With this user friendly application, you can view a map, top locations, and the forecast of the city searched. It uses [OpenWeather API](https://openweathermap.org/api) and two [Google API's](https://developers.google.com/places/web-service/search), to retrieve data for the inputed city. As avid travelers, we wanted to create an application that has a map, top sites, and weather.
 
-# Requirements that were done during the project
+url: https://obrienceob.github.io/LostNoMore/
 
-* Use a CSS framework other than Bootstrap.
-
-* Be deployed to GitHub Pages.
-
-* Be interactive (i.e., accept and respond to user input).
-
-* Use at least two server-side APIs.
-
-* Does not use alerts, confirms, or prompts (use modals).
-
-* Use client-side storage to store persistent data.
-* Be responsive.
-
-* Have a polished UI.
-
-* Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-
-* Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+## Table of Contents
+---
+* [Languages and Libraries](#Languages)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Credits](#Credits)
+* [Authors](#Authors)
+* [License](#License)
 
 
+## Languages
+---
+* JavaScript
+* HTML
+* CSS
+
+    Libraries used:
+    * jquery
+    * bulma
+    * moment
+    * fontawesome
+
+## Installation 
+--- 
+In order to run the top sites for the city. Users must accept the cors proxy from cors-anywhere. At the following url:
+
+url: https://cors-anywhere.herokuapp.com/
+
+![aboutme](assets/images/readme/herokuapp.png);
+
+Once Accepted you will see a message at the end that says:
+You currently have temporary access to the demo server. 
+
+## Usage
+---
+When the user searches for a city, enter the city and click search. Then the map, five top site categories, and weather with a five day forecast will populate for that city.
+<br>
+
+<img src="assets/images/readme/Start.gif" width="100%" alt="start"/>
+
+<br>
+
+<br>
+
+<img src="assets/images/readme/search.gif" width="100%" alt="start"/>
+
+<br>
 
 
+Click on which top site category you would like to see, gyms, lodging, cafes, tourist attractions, and restaurants. 
+When selected the top six sites will appear from that category. They will also populate on the map, which you can zoom in on.
 
-# Project Description:
-In the project Lost No More we created a visitor guide for cities. 
-The Application contains:
-* A map of the city that is input in the search bar
-* Top locations to visit in the city listed on the map
-* The current 5 day forcast for the city
-* Descriptions for the places listed below the map
-* A link to our group's git hub pages in the footer
-* A description of the app in the header
+<br>
 
-# User Story
-As a user, I want to be able to look up a map of a city I am traveling to or in.
+<img src="assets/images/readme/topSites.gif" width="100%" alt="search"/>
 
-I want to see top sites within the city on the map, and a description of the top sites below the map, including images of those top sites.
+<br>
 
-I want to be able to see the 5 day forecast for the city I am visiting next to the map of top sites.
+<img src="assets/images/readme/tags.gif" width="100%" alt="map"/>
 
-# Wireframe
+When the user scrolls all the way down. The footer has a nice drop down menu with hyperlinks to each team members github page. Below is an icon for this repos github page.
 
-link to wireframe Hanh created
+<br>
 
-# APIs used
-[Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
-[Google Places API](https://cloud.google.com/maps-platform/places/)
-[Open Weather API](https://openweathermap.org/api)
+<img src="assets/images/readme/footer.gif" width="100%" alt="footer"/>
 
-# Task breakdown
-Link to Presentation file https://docs.google.com/presentation/d/1bIjCnd0vBGhBoixsHXDmIbmuf2WR24Uum3jaKVZ8Irg/edit?usp=sharing
+<br>
 
+## Credits
+---
+    The following tutorials were used: 
+        * https://www.w3schools.com/howto/howto_css_modals.asp : used for modal 
+        * https://github.com/Rob--W/cors-anywhere
+        * https://www.w3schools.com/graphics/google_maps_intro.asp
+        * https://developers.google.com/maps/documentation/javascript/overview
+    
+We used the herokuapp from github repository for our proxy url in order to work with google api's. We have a 90 day trial for google, to make this work correctly. 
 
-Project development todo list(general):
-- [ ] Set up the file structure (Index, Assets, etc.)
-- [ ] Create HTML boilerplate (Hanh + Danielle)
-- [ ] Add basic CSS formatting (Hanh + Danielle)
-- [ ] Write down pseudocode for script.js file (Amal + Conor)
-- [ ] Link Google Maps API (Amal + Conor)
-- [ ] Link Open Weather API (Amal + Conor)
-- [ ] Link Google Places API (Amal + Conor)
-
-
-##### Contributors:
+## Authors
+---
 
 * [Amal Janabayev](https://github.com/Amal31497)
 * [Conor O'Brien](https://github.com/obrienceob)
 * [Danielle Orley](https://github.com/dorley1993)
 * [Hanh Le](https://github.com/hanhle1989)
 * [Sandu Corobcenco](https://github.com/SanduCorobcenco)
-##### Directory:
 
-* [Current Repository](https://github.com/obrienceob/LostNoMore)
-* [Website](https://obriencob.github.io/LostNoMore/)
+
+## License
+---
+Copyright © Team of Lost No More
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
