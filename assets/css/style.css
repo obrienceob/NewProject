@@ -264,7 +264,7 @@ h5 {
     background-color: hsl(204, 86%, 53%);
     color: white;
     text-align: center;
-    position: relative;
+    position: fixed;
  }
 
 
@@ -293,6 +293,7 @@ h5 {
     }
     .footer {
         padding: 0;
+        position: fixed;
     }
     .popup-overlay {
         width: 40%;
@@ -346,6 +347,7 @@ and (max-width: 400px) {
     }
     .footer {
         padding: 0;
+        position: fixed;
     }
     .popup-overlay {
         width: 40%;
@@ -400,6 +402,7 @@ and (max-width: 768px) {
     }
     .footer {
         padding: 0;
+        position: fixed;
     }
     .popup-overlay {
         left: 30%;
@@ -437,6 +440,7 @@ and (max-width: 992px) {
     }
     .footer {
         padding: 0;
+        position: fixed;
     }
     .popup-overlay {
         width: 40%;
