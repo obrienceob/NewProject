@@ -80,6 +80,8 @@ When the user scrolls all the way down. The footer has a nice drop down menu wit
         * https://developers.google.com/maps/documentation/javascript/overview
     
 We used the herokuapp from github repository for our proxy url in order to work with google api's. We have a 90 day trial for google, to make this work correctly. 
+       
+        *link to presentation: https://docs.google.com/presentation/d/1Huk8YZolcKVDnfGTukDfxkD-VXXJgcfK/edit#slide=id.gbb7a579cdf_1_21
 
 ## Authors
 ---
