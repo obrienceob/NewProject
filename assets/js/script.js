@@ -1,7 +1,7 @@
 $(document).ready(function(){
     //weather API
     var weatherAPI = "424b27cb93fafd7914e312602e3d2a39";
-    var googleAPI = "AIzaSyA9KoDHkh0ImS4kCiFNvslAws_sa4MVNXE";
+    var googleAPI = "AIzaSyBtOd1O74ejysEvfsn95bamVx2fsOvmXq0";
 
     //city array for local storage
     var cityI = [];
